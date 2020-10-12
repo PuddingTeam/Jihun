@@ -1,0 +1,117 @@
+
+
+drop sequence music_seq;
+create sequence music_seq start with 1 increment by 1 nocache;
+
+drop table music;
+create table music(    --제일중요한 음악 테이블 
+  mno number primary key,
+  music_title varchar2(50) not null,  --노래제목
+  music_price number not null, -- 음악 가격
+  music_category varchar2(50) , --카테
+  music_ganre varchar2(50) not null, 
+  music_recount number,  --조회수
+  music_image  varchar2(50), --음악앨범이미지
+  music_song  varchar2(50), -- 음악mp3파일
+  music_singer varchar2(50), 
+  music_lyics varchar2(50), --가사
+  music_date date               --등록일
+);
+
+select * from music;
+
+drop sequence notice_seq;
+create sequence notice_seq start with 1 increment by 1 nocache;
+
+drop table notice;
+create table notice(  --공지사항 테이블 
+  noticeno number primary key,
+  notice_title varchar2(50) not null,
+  notice_content varchar2(50) ,
+  notice_recount number,     --공지사항 조회수
+notice_date date
+);
+
+drop sequence QA_seq;
+create sequence QA_seq start with 1 increment by 1 nocache;
+
+drop table QA;
+create table QA(             
+  QA_no number primary key,    
+  QA_category varchar2(50) not null,
+  QA_date date ,
+  QA_content varchar2(50) 
+);
+
+drop sequence Dj_seq;
+create sequence Dj_seq start with 1 increment by 1 nocache;
+
+drop table Dj;
+create table Dj(             
+  Dj_no number primary key,    
+  Dj_code varchar2(50) not null,
+  Dj_list varchar2(50) 
+);
+
+drop sequence board_seq;
+create sequence board_seq start with 1 increment by 1 nocache;
+
+drop table board;
+create table board(  
+  boardno number primary key,
+  board_writer varchar2(50),  --작성자
+  board_passwd varchar2(50),
+  board_title varchar2(50),     --제목
+  board_date date,          --등록일
+  board_recount number,     --조회수
+  board_content varchar2(50),   
+  board_recontent varchar2(50)   --리플
+);
+
+drop sequence recontent_seq;
+create sequence recontent_seq start with 1 increment by 1 nocache;
+
+drop table recontent;
+create table recontent(  
+  recontentno number primary key,
+  recontent_writer varchar2(50),  --작성자
+  recontent_passwd varchar2(50),
+  recontent_content varchar2(50),
+  recontent_date date
+  );
+  
+drop sequence orders_seq;
+create sequence orders_seq start with 1 increment by 1 nocache ;
+
+drop table orders CASCADE CONSTRAINTS;
+create table orders(  
+  ordersno number primary key,
+  orders_id varchar2(50),
+  orders_date date
+  );
+
+
+drop sequence orderdetail_seq;   
+create sequence orderdetail_seq start with 1 increment by 1 nocache ;
+
+drop table orderdetail;
+create table orderdetail(  
+  orderdetailno number primary key, --시퀀스 번호
+  orderdetailrealid_no number,   --주문한 아이디번호
+  orderdetail_orderno number,    --주문한 제품의 번호
+  orderdetial_count number    --주문갯수
+);
+
+drop sequence customer_seq;  
+create sequence customer_seq start with 1 increment by 1 nocache;
+
+drop table customer;
+create table customer(
+customerno number primary key,
+customer_name varchar2(50),
+customer_id varchar2(50),
+customer_passwd varchar2(50),
+customer_email varchar2(50)
+);
+
+

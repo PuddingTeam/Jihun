@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN" 
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+<configuration>
+	<typeAliases>
+		<typeAlias type="Admin.model.Notice" alias="MyNotice"/>
+		<typeAlias type="Category.model.Category" alias="MyCategory"/>
+		<typeAlias type="Music.model.Music" alias="MyMusic"/>
+	</typeAliases>
+	
+	<mappers>
+		<mapper resource="Pudding/mybatis/Category.xml"/>
+		<mapper resource="Pudding/mybatis/Notice.xml"/>
+		<mapper resource="Pudding/mybatis/Pudding.xml"/>
+		<mapper resource="Pudding/mybatis/Music.xml"/>
+	</mappers>
+</configuration>
+
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Music.model.Music">
+<insert id="insertdata">
+insert into music(mno,music_price, music_title,music_singer,music_ganre,music_image,music_song,music_lyics,music_date,music_recount)
+ values(music_seq.nextval,#{music_price}, #{music_title},#{music_singer},#{music_ganre},#{music_image},#{music_song},#{music_lyics},#{music_date},0)
+</insert>
+
+	<select id="GetDataList" resultType="MyMusic">
+		select * from music order by mno
+	</select>
+	
+	<select id="GetOneData" resultType="MyMusic">
+		select * from music where mno =#{mno}
+	</select>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
