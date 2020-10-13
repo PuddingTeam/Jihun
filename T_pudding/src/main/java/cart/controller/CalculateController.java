@@ -1,4 +1,4 @@
-package mall.controller;
+package cart.controller;
 
 import java.util.Map;
 import java.util.Set;
@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import Music.model.MusicDao;
 import mall.cart.MyCartList;
 import member.model.Member;
 import member.model.MemberDao;
@@ -23,16 +24,16 @@ public class CalculateController {
 	final String command = "calculate.mall";
 	final String gotoPage = "redirect:/list.prd";
 	
-	@Autowired
-	MemberDao memberdao;
+//	@Autowired
+//	MemberDao memberdao;
 	
 	@Autowired
-	ProductDao productdao;
-	@Autowired
-	OrderDao orderdao;
+	MusicDao musicdao;
+//	@Autowired
+//	OrderDao orderdao;
 	
-	@Autowired
-	OrderDetailDao orderDetailDao;
+//	@Autowired
+//	OrderDetailDao orderDetailDao;
 	
 	@RequestMapping(command)
 	public String doAction(HttpSession session) {

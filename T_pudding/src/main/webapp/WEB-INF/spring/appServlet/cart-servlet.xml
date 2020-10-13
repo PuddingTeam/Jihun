@@ -10,15 +10,16 @@
 <mvc:annotation-driven/> <!-- 유효성 검사 -->
 	
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
-		<property name="prefix" value="/WEB-INF/mall/" />
+		<property name="prefix" value="/WEB-INF/cart/" />
 		<property name="suffix" value=".jsp" />
 	</bean>
 	
 	<!-- controller의 위치 @Controller -->
 	<context:component-scan base-package="Pudding" />	
-	<context:component-scan base-package="Music" />
-	<context:component-scan base-package="mall"/>
+	<context:component-scan base-package="Music">
+	<context:exclude-filter type="annotation" 
+   expression="org.springframework.stereotype.Controller"/>
+   </context:component-scan>
+	<context:component-scan base-package="cart"/>
 	<context:component-scan base-package="Admin"/>
-	<context:component-scan base-package="order"/>
-	<context:component-scan base-package="orderdetail"/>
 </beans>

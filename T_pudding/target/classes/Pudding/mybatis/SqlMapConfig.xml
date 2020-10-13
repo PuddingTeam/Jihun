@@ -8,6 +8,7 @@
 		<typeAlias type="Admin.model.Notice" alias="MyNotice"/>
 		<typeAlias type="Category.model.Category" alias="MyCategory"/>
 		<typeAlias type="Music.model.Music" alias="MyMusic"/>
+		<typeAlias type="cart.model.Cart" alias="MyCart"/>
 	</typeAliases>
 	
 	<mappers>
@@ -15,6 +16,7 @@
 		<mapper resource="Pudding/mybatis/Notice.xml"/>
 		<mapper resource="Pudding/mybatis/Pudding.xml"/>
 		<mapper resource="Pudding/mybatis/Music.xml"/>
+		<mapper resource="Pudding/mybatis/Cart.xml"/>
 	</mappers>
 </configuration>
 

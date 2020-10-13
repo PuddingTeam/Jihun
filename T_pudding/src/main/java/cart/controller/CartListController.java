@@ -1,6 +1,7 @@
-package mall.controller;
+package cart.controller;
 
 import java.util.ArrayList;
+
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -11,20 +12,20 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import Music.model.Music;
+import Music.model.MusicDao;
 import mall.cart.MyCartList;
 import mall.cart.ShoppingInfo;
-import product.model.Product;
-import product.model.ProductDao;
 
 
 @Controller
 public class CartListController {
 	
-	final String command = "list.mall";
-	final String getPage = "MallList";
+	final String command = "list.ct";
+	final String getPage = "CartList";
 	
 	@Autowired
-	ProductDao productDao;
+	MusicDao musicdao;
 	
 	@RequestMapping(command)
 	public String doAction(HttpSession session) {
@@ -39,20 +40,19 @@ public class CartListController {
 		Set<Integer> keylist =   maplist.keySet(); //maplist들 중에 키들만 가져와바라
 		System.out.println("keylist :"+keylist);
 		
-		for(Integer pnum : keylist) {
-		Integer oqty = maplist.get(pnum);
-		System.out.println(pnum+ ":" + oqty);  // pnum키값 oqty개 주문
+		for(Integer mno : keylist) {
+		Integer recount = maplist.get(mno);
+		System.out.println(mno+ ":" + recount);  // pnum키값 oqty개 주문
 		
-		Product bean  =productDao.getProductByNum(pnum);
+		Music bean  = musicdao.getOneData(mno);
 		
 		ShoppingInfo shopInfo = new ShoppingInfo();
-		shopInfo.setPnum(pnum);
-		shopInfo.setPname(bean.getName());
-		shopInfo.setQty(oqty);
-		shopInfo.setPrice(bean.getPrice());
-		shopInfo.setAmount(bean.getPrice()*oqty);
-		totalAmount += bean.getPrice()* oqty;
-		shoplists.add(shopInfo);
+		shopInfo.setMnum(mno);
+		shopInfo.setMtitle(bean.getMusic_title());
+		shopInfo.setPrice(bean.getMusic_price());
+		shopInfo.setAmount(bean.getMusic_price()*1);
+		totalAmount += bean.getMusic_price()* 1;
+		shoplists.add(shopInfo);			
 		
 		}
 		 session.setAttribute("shoplists", shoplists);

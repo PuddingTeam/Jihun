@@ -13,7 +13,10 @@
 		
 	<mvc:annotation-driven/>	
 	
-	<context:component-scan base-package="Music"/>	
+	<context:component-scan base-package="Pudding" />	
+	<context:component-scan base-package="Music" />
+	<context:component-scan base-package="cart"/>
+	<context:component-scan base-package="Admin"/>
 	
 	<bean id="internalResourceViewResolver"
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">

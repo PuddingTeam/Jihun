@@ -107,7 +107,7 @@
 			</td>
 			
 			<td align="center">
-				<a href="add.mall?num=${music.mno }">장바구니</a>
+				<a href="add.ct?num=${music.mno}">장바구니</a>
 			</td>
 			
 			<td align="center">

@@ -12,20 +12,20 @@
     <th colspan="5">주문자 정보 :  </th>
   </tr>
   <tr>
-    <td>상품번호</td>
-    <td>상품명</td>
-    <td>주문 수량</td>
-    <td>단가</td>
-    <td>금액</td>
+    <td>앨범이미지</td>
+    <td>노래제목</td>
+    <td>가수</td>
+    <td>가격</td>
+    <td>합계</td>
   </tr>
   
-  <c:forEach items="${sessionScope.shoplists}" var="shopInfo">
+  <c:forEach items="" var="shopInfo">
   <tr >
-  	<td align="center">${shopInfo.pnum} </td>
-  	<td align="center">${shopInfo.pname} </td>
-  	<td align="center">${shopInfo.qty} </td>
-  	<td align="center">${shopInfo.price} </td>
-  	<td align="center">${shopInfo.amount} </td>
+  	<td align="center"> </td>
+  	<td align="center"> </td>
+  	<td align="center"></td>
+  	<td align="center"> </td>
+  	<td align="center"> </td>
   </tr>
   </c:forEach>
   <tr>
@@ -33,7 +33,7 @@
   	<a href="calculate.mall">결재하기</a> &nbsp;&nbsp; 
   	<a href="list.prd">추가주문하기</a> 
   	</td>
-  	<td colspan="2">총금액 :${totalAmount}  </td>
+  	<td colspan="2">총금액 : </td>
   </tr>
 </table>
 </html> 
